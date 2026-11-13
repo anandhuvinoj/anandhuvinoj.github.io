@@ -85,3 +85,53 @@ if (!reducedMotion.matches && "IntersectionObserver" in window) {
 
   revealTargets.forEach(element => observer.observe(element));
 }
+
+
+/* Reading progress indicator */
+const progressBar = document.querySelector('.scroll-progress span');
+let progressTicking = false;
+const updateProgress = () => {
+  if (!progressBar) return;
+  const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = scrollable > 0 ? window.scrollY / scrollable : 0;
+  progressBar.style.transform = `scaleX(${Math.min(1, Math.max(0, progress))})`;
+  progressTicking = false;
+};
+window.addEventListener('scroll', () => {
+  if (!progressTicking) {
+    window.requestAnimationFrame(updateProgress);
+    progressTicking = true;
+  }
+}, { passive: true });
+updateProgress();
+
+/* Highlight the navigation item for the section currently in view. */
+if ('IntersectionObserver' in window) {
+  const sectionLinks = [...document.querySelectorAll('#nav a[href^="#"]')];
+  const sectionObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      sectionLinks.forEach(link => {
+        const isCurrent = link.getAttribute('href') === `#${entry.target.id}`;
+        link.classList.toggle('active', isCurrent);
+        if (isCurrent) link.setAttribute('aria-current', 'location');
+        else link.removeAttribute('aria-current');
+      });
+    });
+  }, { rootMargin: '-28% 0px -58% 0px' });
+  document.querySelectorAll('main section[id]').forEach(section => sectionObserver.observe(section));
+}
+
+/* Very soft pointer-following light in the hero, desktop pointers only. */
+const hero = document.querySelector('.hero');
+if (hero && window.matchMedia('(pointer: fine)').matches && !reducedMotion.matches) {
+  hero.addEventListener('pointermove', event => {
+    const rect = hero.getBoundingClientRect();
+    hero.style.setProperty('--spot-x', `${event.clientX - rect.left}px`);
+    hero.style.setProperty('--spot-y', `${event.clientY - rect.top}px`);
+  }, { passive: true });
+  hero.addEventListener('pointerleave', () => {
+    hero.style.setProperty('--spot-x', '68%');
+    hero.style.setProperty('--spot-y', '38%');
+  });
+}
