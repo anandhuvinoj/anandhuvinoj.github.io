@@ -181,3 +181,26 @@
 @media (prefers-reduced-motion: reduce) {
   .mechanical-eye, .mechanical-eye .eye-rings, .mechanical-eye .eye-aperture { animation: none !important; }
 }
+
+/* Vanta NET background: contained only within the dark hero section */
+.hero { isolation: isolate; }
+#hero-net-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: auto;
+}
+#hero-net-bg canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+.hero-copy, .hero-visual, .hero-bottomline {
+  position: relative;
+  z-index: 2;
+}
+.hero-grid, .mechanical-eye, .hero-spotlight { display: none !important; }
+@media (prefers-reduced-motion: reduce) {
+  #hero-net-bg { display: none; }
+}

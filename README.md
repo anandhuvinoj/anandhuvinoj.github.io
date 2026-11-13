@@ -23,3 +23,7 @@ Then visit http://localhost:8000.
 - Check every detail and replace/add project links when writeups are ready.
 - The current portrait is a lightly adjusted crop of the original photo you supplied; facial features have not been retouched or regenerated.
 - Project descriptions are intentionally framed as practice/research, not paid client engagements.
+
+
+## Hero background
+The previous mechanical-eye graphic has been removed. The dark hero section now uses the Vanta.NET animated particle network in lime green. It loads Three.js r134 and Vanta.NET from their CDNs; an internet connection is required for the effect. The effect is disabled for visitors who prefer reduced motion.
