@@ -22,20 +22,20 @@
  <path d="M335 438 Q505 285 715 290 Q900 292 1045 438" stroke="#9bdc31" stroke-opacity=".36" stroke-width="3"/>
  <path d="M335 458 Q505 605 715 600 Q900 598 1045 458" stroke="#a1e72f" stroke-opacity=".28" stroke-width="3"/>
  <ellipse cx="710" cy="445" rx="285" ry="235" fill="url(#mist)"/>
- <g class="eye-rings" transform-origin="710px 445px">
+ <g class="eye-rings" transform-origin="710px 445px"><animateTransform attributeName="transform" type="rotate" from="0 710 445" to="360 710 445" dur="44s" repeatCount="indefinite"/>
   <circle cx="710" cy="445" r="205" stroke="#7caa2a" stroke-opacity=".65" stroke-width="2" stroke-dasharray="3 12"/>
   <circle cx="710" cy="445" r="184" stroke="#b3ec45" stroke-opacity=".48" stroke-width="5" stroke-dasharray="1 8"/>
   <circle cx="710" cy="445" r="160" stroke="#a8e83a" stroke-opacity=".75" stroke-width="9" stroke-dasharray="4 9" filter="url(#glow)"/>
   <circle cx="710" cy="445" r="132" stroke="#d2ff69" stroke-opacity=".8" stroke-width="3" stroke-dasharray="2 6"/>
  </g>
  <circle cx="710" cy="445" r="116" fill="url(#iris)" stroke="#b7f34d" stroke-opacity=".78" stroke-width="4" filter="url(#glow)"/>
- <g class="eye-aperture" transform-origin="710px 445px">
+ <g class="eye-aperture" transform-origin="710px 445px"><animateTransform attributeName="transform" type="rotate" from="0 710 445" to="-360 710 445" dur="32s" repeatCount="indefinite"/>
   <path d="M710 340 750 385 766 445 750 505 710 550 670 505 654 445 670 385Z" fill="#080d06" stroke="#c7f65b" stroke-opacity=".7" stroke-width="3"/>
   <circle cx="710" cy="445" r="48" fill="#060906" stroke="#c4f45b" stroke-width="3" stroke-opacity=".82"/>
   <circle cx="710" cy="445" r="17" fill="#bdf45a" fill-opacity=".42" filter="url(#glow)"/><circle cx="710" cy="445" r="7" fill="#e3ffad" filter="url(#glow)"/>
  </g>
  <!-- segmented luminous lower iris -->
- <g stroke="#c4f45b" stroke-width="8" stroke-linecap="round" opacity=".9" filter="url(#glow)">
+ <g stroke="#c4f45b" stroke-width="8" stroke-linecap="round" opacity=".9" filter="url(#glow)"><animate attributeName="opacity" values=".62;.98;.62" dur="4.8s" repeatCount="indefinite"/>
   <path d="M565 520 Q585 575 625 590"/><path d="M645 594 Q710 615 775 594"/><path d="M795 585 Q835 565 855 520"/>
  </g>
  <g stroke="#b4ee48" stroke-width="3" opacity=".7"><path d="M710 205v42M710 643v42M455 445h-45M1010 445h45M530 265l-28-28M890 265l28-28M530 625l-28 28M890 625l28 28"/></g>
