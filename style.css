@@ -204,3 +204,29 @@
 @media (prefers-reduced-motion: reduce) {
   #hero-net-bg { display: none; }
 }
+
+
+/* Layout safeguard: keep Vanta as a background layer, never as a grid item. */
+.hero {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1.15fr) minmax(300px, .85fr) !important;
+  grid-template-areas: "copy visual" !important;
+  align-items: center !important;
+  position: relative !important;
+}
+#hero-net-bg {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  grid-area: auto !important;
+  z-index: 0 !important;
+}
+.hero-copy { grid-area: copy !important; min-width: 0; z-index: 2 !important; }
+.hero-visual { grid-area: visual !important; min-width: 0; z-index: 2 !important; }
+.hero-bottomline { z-index: 2 !important; }
+@media (max-width: 800px) {
+  .hero { grid-template-columns: minmax(0, 1fr) !important; grid-template-areas: "copy" "visual" !important; }
+  .hero-copy { grid-area: copy !important; }
+  .hero-visual { grid-area: visual !important; }
+}
