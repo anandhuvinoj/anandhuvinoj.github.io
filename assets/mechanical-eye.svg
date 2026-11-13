@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" fill="none">
+<defs>
+ <radialGradient id="mist"><stop stop-color="#9bea20" stop-opacity=".25"/><stop offset=".48" stop-color="#4c7d0e" stop-opacity=".12"/><stop offset="1" stop-color="#080b06" stop-opacity="0"/></radialGradient>
+ <radialGradient id="iris"><stop stop-color="#d9ff83"/><stop offset=".12" stop-color="#a8ed30"/><stop offset=".38" stop-color="#6ea91b"/><stop offset=".72" stop-color="#18270c"/><stop offset="1" stop-color="#070a06"/></radialGradient>
+ <linearGradient id="steel" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#a6ad9b" stop-opacity=".68"/><stop offset=".18" stop-color="#424b39" stop-opacity=".85"/><stop offset=".45" stop-color="#11170f"/><stop offset=".72" stop-color="#68735a" stop-opacity=".62"/><stop offset="1" stop-color="#080b07"/></linearGradient>
+ <linearGradient id="beam" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#a9f52e" stop-opacity="0"/><stop offset=".5" stop-color="#9ce52c" stop-opacity=".28"/><stop offset="1" stop-color="#9ce52c" stop-opacity="0"/></linearGradient>
+ <filter id="glow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="12" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+ <filter id="haze" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="35"/></filter>
+ </defs>
+ <ellipse cx="700" cy="430" rx="490" ry="340" fill="url(#mist)" filter="url(#haze)"/>
+ <path d="M260 0 650 340 520 390 160 45Z" fill="url(#beam)" opacity=".5"/><path d="M920 0 760 330 840 370 1110 0Z" fill="url(#beam)" opacity=".35"/>
+ <!-- fractured metallic armour above the eye -->
+ <g stroke="#849078" stroke-opacity=".48" stroke-width="2" stroke-linejoin="round">
+  <path d="M300 0 455 0 555 170 475 252 350 175Z" fill="url(#steel)"/><path d="M478 0 640 0 685 145 575 220 535 155Z" fill="url(#steel)"/>
+  <path d="M680 0 845 0 905 105 790 230 690 158Z" fill="url(#steel)"/><path d="M885 0 1055 0 1010 155 900 215 835 135Z" fill="url(#steel)"/>
+  <path d="M160 120 330 72 420 210 345 300 205 260Z" fill="url(#steel)" opacity=".68"/>
+  <path d="M1020 130 1165 70 1100 260 980 310 930 230Z" fill="url(#steel)" opacity=".62"/>
+  <path d="M420 40 490 175 455 230 390 120Z" fill="#a5ad98" fill-opacity=".13"/><path d="M740 15 815 140 760 210 700 100Z" fill="#b7c2a5" fill-opacity=".12"/>
+ </g>
+ <!-- eye housing: elongated mechanical eyelid -->
+ <path d="M300 445 Q470 230 720 245 Q930 250 1085 445 Q930 640 715 645 Q470 650 300 445Z" fill="#080d07" fill-opacity=".8" stroke="#657b3c" stroke-opacity=".62" stroke-width="5"/>
+ <path d="M335 438 Q505 285 715 290 Q900 292 1045 438" stroke="#9bdc31" stroke-opacity=".36" stroke-width="3"/>
+ <path d="M335 458 Q505 605 715 600 Q900 598 1045 458" stroke="#a1e72f" stroke-opacity=".28" stroke-width="3"/>
+ <ellipse cx="710" cy="445" rx="285" ry="235" fill="url(#mist)"/>
+ <g class="eye-rings" transform-origin="710px 445px">
+  <circle cx="710" cy="445" r="205" stroke="#7caa2a" stroke-opacity=".65" stroke-width="2" stroke-dasharray="3 12"/>
+  <circle cx="710" cy="445" r="184" stroke="#b3ec45" stroke-opacity=".48" stroke-width="5" stroke-dasharray="1 8"/>
+  <circle cx="710" cy="445" r="160" stroke="#a8e83a" stroke-opacity=".75" stroke-width="9" stroke-dasharray="4 9" filter="url(#glow)"/>
+  <circle cx="710" cy="445" r="132" stroke="#d2ff69" stroke-opacity=".8" stroke-width="3" stroke-dasharray="2 6"/>
+ </g>
+ <circle cx="710" cy="445" r="116" fill="url(#iris)" stroke="#b7f34d" stroke-opacity=".78" stroke-width="4" filter="url(#glow)"/>
+ <g class="eye-aperture" transform-origin="710px 445px">
+  <path d="M710 340 750 385 766 445 750 505 710 550 670 505 654 445 670 385Z" fill="#080d06" stroke="#c7f65b" stroke-opacity=".7" stroke-width="3"/>
+  <circle cx="710" cy="445" r="48" fill="#060906" stroke="#c4f45b" stroke-width="3" stroke-opacity=".82"/>
+  <circle cx="710" cy="445" r="17" fill="#bdf45a" fill-opacity=".42" filter="url(#glow)"/><circle cx="710" cy="445" r="7" fill="#e3ffad" filter="url(#glow)"/>
+ </g>
+ <!-- segmented luminous lower iris -->
+ <g stroke="#c4f45b" stroke-width="8" stroke-linecap="round" opacity=".9" filter="url(#glow)">
+  <path d="M565 520 Q585 575 625 590"/><path d="M645 594 Q710 615 775 594"/><path d="M795 585 Q835 565 855 520"/>
+ </g>
+ <g stroke="#b4ee48" stroke-width="3" opacity=".7"><path d="M710 205v42M710 643v42M455 445h-45M1010 445h45M530 265l-28-28M890 265l28-28M530 625l-28 28M890 625l28 28"/></g>
+ <!-- floating shards and fine HUD marks -->
+ <g fill="#a8ed36" opacity=".8"><path d="m260 330 42-8-20 13Z"/><path d="m1040 330 45-10-24 16Z"/><circle cx="390" cy="305" r="3"/><circle cx="980" cy="290" r="3"/><circle cx="510" cy="680" r="2"/><circle cx="900" cy="680" r="2"/></g>
+ <g stroke="#8dc52b" stroke-opacity=".35" stroke-width="1"><path d="M180 445h170M1070 445h100" stroke-dasharray="3 9"/><path d="M710 80v105M710 705v75" stroke-dasharray="3 9"/></g>
+</svg>
